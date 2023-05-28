@@ -1,19 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, forwardRef } from "react";
 import "./index.css";
-function About() {
+
+const About = forwardRef(function About(props, ref) {
     // const aboutRef = useRef(null);
-    const [visible, setVisible] = useState(false);
+    const [visible, setVisible] = useState(true);
 
     return (
-        <div>
+        <div ref={ref}>
             <header>
-                <h1>Sobre nosotros</h1>
-                <button
+                <h2>Sobre nosotros</h2>
+                {/* <button
                     onClick={() => {
                         setVisible(!visible);
                     }}>
                     +
-                </button>
+                </button> */}
             </header>
 
             {visible && (
@@ -63,6 +64,6 @@ function About() {
             )}
         </div>
     );
-}
+})
 
 export { About };

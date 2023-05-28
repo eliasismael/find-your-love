@@ -9,14 +9,15 @@
     color: white;
     border: none;
     font-size: 90px;
-    box-shadow: 0 0 15px rgb(0, 255, 255, 0.5);
+    box-shadow: 0 0 15px rgb(255, 251, 0);
     opacity: 1;
-    transition: opacity 300ms ease-out;
+    transition: opacity 300ms ease-out,box-shadow .3s ease-out ;
 }
 
 .AddUser__button:hover {
-    box-shadow: 0 0 30px rgb(0, 255, 255, 0.7);
+    box-shadow: 0 0 30px rgb(255, 251, 0);
     cursor: pointer;
+    transition: box-shadow .3s ease;
 }
 
 .AddUser__button span,

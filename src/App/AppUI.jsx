@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect, forwardRef } from "react";
 import { Menu } from "../components/Menu";
 import { User } from "../components/User";
 import { ButtonChooseCouple } from "../components/ButtonChooseCouple";
@@ -7,7 +7,6 @@ import { ButtonResetElections } from "../components/ButtonResetElections";
 import { AddUser } from "../components/AddUser";
 import { Results } from "../components/Results";
 import { About } from "../components/About";
-import { useState } from "react";
 import { Contact } from "../components/Contact";
 
 import { useMyContext } from "../context";
@@ -21,14 +20,25 @@ function AppUI() {
         textsForWomen,
         buttonsClicked,
         setButtonsClicked,
-        // matchesSearched,
     } = useMyContext();
+
+    const contactRef = useRef(null)
+    const aboutUsRef = useRef(null)
+
+    const makeScroll = (componentRef) => {
+        componentRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+
+    const componentsRefs = {
+        aboutUsRef: aboutUsRef,
+        contactRef: contactRef
+    }
 
     return (
         <React.Fragment>
-            <header>
+            <header >
                 <h1>Find your love!</h1>
-                <Menu />
+                <Menu makeScroll={makeScroll} ref={componentsRefs} />
             </header>
 
             <main>
@@ -80,22 +90,21 @@ function AppUI() {
                     setThisButtonClicked={setButtonsClicked}
                 />
 
-                <section>
-                    <Results />
-                    {/* 
-                    {matchesSearched && (
-                        <ButtonResetElections
-                            thisButtonClicked={buttonsClicked}
-                            setThisButtonClicked={setButtonsClicked}
-                        />
-                    )} */}
-                </section>
-
                 <AddUser />
 
-                <About />
+                <section>
+                    <Results />
+                </section>
 
-                <Contact />
+                <section>
+                    <About ref={aboutUsRef} />
+                </section>
+
+                <section>
+                    <Contact ref={contactRef} />
+                </section>
+
+
             </main>
 
             <footer>

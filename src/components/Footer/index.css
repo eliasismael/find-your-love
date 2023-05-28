@@ -1,0 +1,49 @@
+.Footer {
+    background-color: #e4e4e4;
+    padding: 1em 10em;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: #3b3b3b;
+    font-size: 16px;
+  }
+  
+  
+  .Footer__content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .Footer__section {
+    flex: 1;
+    margin-right: 40px;
+  }
+  
+  .Footer__section h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-align: start;
+  }
+
+   
+  .Footer__section p {
+    font-size: 1em;
+  }
+  
+  .auspiciants {
+    font-style: italic;
+  }
+  
+  .Footer__bottom {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .Footer__bottom p {
+    margin-bottom: 5px;
+    font-size: 1em;
+  }
+  
