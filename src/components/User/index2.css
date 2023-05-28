@@ -1,0 +1,128 @@
+@font-face {
+    font-family: "MoonDance-Regular";
+    src: url("../../public/fonts/MoonDance-Regular.ttf") format("truetype");
+}
+
+.User {
+    text-align: center;
+    margin: 10px;
+    position: relative;
+}
+
+.User__img {
+    width: 12rem;
+    height: 12rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.User__img:hover {
+    box-shadow: 0 0 10px #ff3b3f;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.User__name {
+    font-size: 1.6rem;
+    margin-top: 5px;
+    font-weight: normal;
+}
+
+/* MODAL */
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal__content {
+    width: 70%;
+    max-height: 90%;
+    background-color: #fff;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    display: flex column wrap;
+    font-size: 16px;
+}
+
+.modal__content img {
+    width: 10em;
+    height: 10em;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.modal__content__name {
+    font-family: "MoonDance-Regular";
+    text-align: center;
+    font-size: 2em;
+}
+
+.modal__content__presentation-container {
+    /* max-width: 100%; */
+    height: auto;
+    padding: 0 20px;
+    font-size: 16px;
+    margin: 1.5em 0;
+    word-wrap: break-word;
+}
+
+.modal__content__presentation {
+    font-family: "MoonDance-Regular";
+    font-size: 1.6em;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.modal__buttons {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+}
+
+.modal__buttons__back {
+    background: linear-gradient(45deg, #ff3b3f, #e60073);
+    color: #fff;
+    width: 5rem;
+    height: 75%;
+    font-size: 1.4em;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 2px #e6007380;
+}
+
+.modal__buttons__back:hover {
+    cursor: pointer;
+    box-shadow: 0 0 8px #ff3b9d;
+}
+
+.modal__buttons__delete {
+    background-color: #fff;
+    color: #ff3b3f;
+    position: absolute;
+    right: 0;
+    height: 65%;
+    font-size: 1rem;
+    border: none;
+    padding: 0 6px;
+    border-radius: 10px;
+}
+
+.modal__buttons__delete:hover {
+    color: #fff;
+    background-color: #ff3b3f;
+    box-shadow: 0 0 5px #ff3b3f;
+
+    cursor: pointer;
+}
