@@ -1,9 +1,7 @@
 * {
     padding: 0;
     margin: 0;
-    transition: all 0.3s ease;
     font-family: "MoonDance-Regular", sans-serif;
-    /* box-sizing: border-box; */
 }
 
 @font-face {
@@ -23,26 +21,21 @@ h1 {
 }
 
 main {
-    /* display: flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; */
+    align-items: center;
+    /* border: 1px solid black; */
 }
 
-.UsersSection {
+.Users__section {
     margin-top: 40px;
-    /* max-width: 85%; */
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
 }
 
-footer {
-    /* background: linear-gradient(45deg, #ff3b3f80, #e6007380);
-    color: #ffffff;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; */
+.Results__section{
+    width: 100%;    
 }

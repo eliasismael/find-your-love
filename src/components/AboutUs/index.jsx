@@ -1,24 +1,18 @@
 import React, { useState, forwardRef } from "react";
 import "./index.css";
 
-const About = forwardRef(function About(props, ref) {
+const AboutUs = forwardRef(function (props, ref) {
     // const aboutRef = useRef(null);
     const [visible, setVisible] = useState(true);
 
     return (
         <div ref={ref}>
-            <header>
-                <h2>Sobre nosotros</h2>
-                {/* <button
-                    onClick={() => {
-                        setVisible(!visible);
-                    }}>
-                    +
-                </button> */}
-            </header>
+            <div className="tittle-container">
+                <h2 className="tittle">Sobre nosotros</h2>
+            </div>
 
             {visible && (
-                <div className="container">
+                <div className="text-container">
                     <p>
                         ¡Bienvenidos a Find your love! Estamos dedicados a
                         ayudar a personas solteras a encontrar a su pareja
@@ -66,4 +60,4 @@ const About = forwardRef(function About(props, ref) {
     );
 })
 
-export { About };
+export { AboutUs };

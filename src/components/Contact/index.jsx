@@ -16,7 +16,7 @@ const Contact = forwardRef(function Contact(props, ref) {
     return (
         <div className="main-container" ref={ref}>
             <div className="text">
-                <h3>Contáctanos!</h3>
+                <h3 className="text__tittle">Contáctanos!</h3>
                 <p className="text__main-text">
                     Nos encantaría saber de ti y responder cualquier
                     pregunta o inquietud que puedas tener sobre nuestro

@@ -14,12 +14,15 @@
     height: 12rem;
     border-radius: 50%;
     object-fit: cover;
+    transition: all .3s ease-out;
+
 }
 
 .User__img:hover {
     box-shadow: 0 0 10px #ff3b3f;
     transform: scale(1.1);
     cursor: pointer;
+
 }
 
 .User__name {
@@ -123,6 +126,5 @@
     color: #fff;
     background-color: #ff3b3f;
     box-shadow: 0 0 5px #ff3b3f;
-
     cursor: pointer;
 }

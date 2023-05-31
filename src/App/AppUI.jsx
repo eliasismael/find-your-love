@@ -1,16 +1,17 @@
-import React, { useRef, useEffect, forwardRef } from "react";
+import React, { useRef } from "react";
 import { Menu } from "../components/Menu";
 import { User } from "../components/User";
 import { ButtonChooseCouple } from "../components/ButtonChooseCouple";
 import { ButtonFindCouples } from "../components/ButtonFindCouples";
-import { ButtonResetElections } from "../components/ButtonResetElections";
 import { AddUser } from "../components/AddUser";
 import { Results } from "../components/Results";
-import { About } from "../components/About";
+import { AboutUs } from "../components/AboutUs";
 import { Contact } from "../components/Contact";
-
 import { useMyContext } from "../context";
 import { Footer } from "../components/Footer";
+
+
+import "./index.css";
 
 function AppUI() {
     const {
@@ -24,6 +25,7 @@ function AppUI() {
 
     const contactRef = useRef(null)
     const aboutUsRef = useRef(null)
+    const resultsRef = useRef(null)
 
     const makeScroll = (componentRef) => {
         componentRef.current.scrollIntoView({ behavior: "smooth" });
@@ -31,7 +33,8 @@ function AppUI() {
 
     const componentsRefs = {
         aboutUsRef: aboutUsRef,
-        contactRef: contactRef
+        contactRef: contactRef,
+        resultsRef: resultsRef
     }
 
     return (
@@ -42,7 +45,7 @@ function AppUI() {
             </header>
 
             <main>
-                <section className="UsersSection">
+                <section className="Users__section">
                     {men.map((man) => (
                         <User
                             key={men.indexOf(man)}
@@ -63,7 +66,7 @@ function AppUI() {
                     chosens={women}
                 />
 
-                <section className="UsersSection">
+                <section className="Users__section">
                     {women.map((woman) => (
                         <User
                             key={women.indexOf(woman)}
@@ -88,24 +91,28 @@ function AppUI() {
                     thisButtonClicked={buttonsClicked}
                     buttonID={"button3"}
                     setThisButtonClicked={setButtonsClicked}
+                    // This button will hace access to the Results component in order to make scroll to it
+                    makeScroll={makeScroll}
+                    ref={componentsRefs}
                 />
 
-                <AddUser />
 
-                <section>
-                    <Results />
+                <section className="Results__section">
+                    <Results ref={resultsRef} />
                 </section>
 
                 <section>
-                    <About ref={aboutUsRef} />
+                    <AboutUs ref={aboutUsRef} />
                 </section>
 
                 <section>
                     <Contact ref={contactRef} />
                 </section>
 
+                <AddUser />
 
             </main>
+
 
             <footer>
                 <Footer />

@@ -21,9 +21,31 @@
     pointer-events: none;
 }
 
-ul {
+.matches__text-container, .results__text-container {
+    font-size: 16px;
+}
+
+.matches__text-container ul {
     list-style-type: none;
-    display: flex;
+    display: flex column nowrap;
     justify-content: center;
     align-items: center;
+}
+
+.matches__text-container li {
+    color: black;
+    font-size: 1.8em;
+    text-align: center;
+}
+
+.results__text-container ul {
+    list-style-type: none;
+    display: flex column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.results__text-container li {
+    font-size: 2em;
+    text-align: center;
 }

@@ -1,13 +1,22 @@
-.Results__container[matchesSearched="true"] {
+.Results__container{
+    display: flex;
+    justify-content: center;
+    font-size: 32px;
+}
+
+.Results__container[matchesSearched="true"]{
     background: linear-gradient(#ff3b3f, #e60073);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding: 1rem;
+    padding: 3em 0 ;
     overflow: hidden;
     font-size: 16px;
+    box-sizing: border-box;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
 }
 
 .Results__text[matchesSearched="true"] {
@@ -20,13 +29,16 @@
     max-width: 50%;
     padding: 2em;
     box-shadow: 0 0 100px red;
+    font-size: 16px;
 }
 
-.Results-matches {
+.Results__matches{
+    font-size: 1em;
+    /* color: black; */
 }
 
-.Results-msg {
+.Results__msg {
     margin: 40px 0px;
-    font-size: 1rem;
+    font-size: 1em;
     text-shadow: 0 0 10px rgb(0, 0, 0, 0.5);
 }

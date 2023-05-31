@@ -1,14 +1,13 @@
-import { useEffect, useState } from "react";
+import { forwardRef } from "react";
 import { useMyContext } from "../../context";
 import "./index.css";
 
-function ButtonFindCouples({ buttonID }) {
+const ButtonFindCouples = forwardRef(function ({ buttonID, makeScroll }, ref) {
     const {
         men,
         women,
         menHaveChosen,
         womenHaveChosen,
-        resultText,
         setResultText,
         setMatchesText,
         coupleSelected,
@@ -19,22 +18,17 @@ function ButtonFindCouples({ buttonID }) {
 
     const searchForCouples = () => {
         // RETURN CONDITIONS
-
-        if (!menHaveChosen && !womenHaveChosen) {
+        if (!menHaveChosen && !womenHaveChosen)
             return setResultText("No se eligieron parejas");
-        }
 
-        if (!menHaveChosen) {
+        if (!menHaveChosen)
             return setResultText("Los hombres no eligieron pareja");
-        }
 
-        if (!womenHaveChosen) {
+        if (!womenHaveChosen)
             return setResultText("Las mujeres no eligieron pareja");
-        }
 
-        if (men.length === 0 && women.length === 0) {
+        if (men.length === 0 && women.length === 0)
             return setResultText("No hay usuarios");
-        }
 
         // Show message while searching for matches
         setResultText("Buscando matches...");
@@ -43,8 +37,10 @@ function ButtonFindCouples({ buttonID }) {
         let chosens = Object.values(coupleSelected);
         let thereAreCouples = false;
 
+        // Search for couples
         setTimeout(() => {
-            // Show which person each chose
+
+            // Get the elections
             const addElections = () => {
                 let matchesString = [];
                 for (let i = 0; i < choosers.length; i++) {
@@ -53,8 +49,9 @@ function ButtonFindCouples({ buttonID }) {
                     );
                 }
 
+                // This will be render in the "Results" component
                 return (
-                    <div>
+                    <div className="matches__text-container">
                         <ul style={{ listStyleType: "none" }}>
                             {matchesString.map((e) => {
                                 return (
@@ -68,9 +65,11 @@ function ButtonFindCouples({ buttonID }) {
                 );
             };
 
+            // Show the elections
             const electionsResults = addElections();
             setMatchesText(electionsResults);
 
+            // Get the matches
             const addMatches = () => {
                 let resultString = [];
                 men.forEach((man) => {
@@ -87,15 +86,14 @@ function ButtonFindCouples({ buttonID }) {
                     if (man.name === coupleSelected[coupleSelected[man.name]]) {
                         thereAreCouples = true;
                         resultString.push(
-                            `💞 Hay match entre ${man.name} y ${
-                                coupleSelected[man.name]
+                            `💞 Hay match entre ${man.name} y ${coupleSelected[man.name]
                             } 💞`
                         );
                     }
                 });
 
                 return (
-                    <div>
+                    <div className="results__text-container">
                         {thereAreCouples && (
                             <ul>
                                 {resultString.map((e) => {
@@ -117,8 +115,10 @@ function ButtonFindCouples({ buttonID }) {
                 );
             };
 
+            // Show the matches
             const matches = addMatches();
             setResultText(matches);
+
             setMatchesSearched(true);
         }, 3000);
 
@@ -128,20 +128,17 @@ function ButtonFindCouples({ buttonID }) {
         }));
     };
 
-    useEffect(() => {
-        const componenteDestino = document.querySelector(".Results__container");
-        componenteDestino.scrollIntoView({ behavior: "smooth" });
-    }, [resultText]);
-
     return (
         <button
-            className={`ButtonFindCouples__button ${
-                buttonsClicked[buttonID] && "buttonCliked"
-            }`}
-            onClick={searchForCouples}>
+            className={`ButtonFindCouples__button ${buttonsClicked[buttonID] && "buttonCliked"
+                }`}
+            onClick={() => {
+                searchForCouples()
+                makeScroll(ref.resultsRef)
+            }}>
             Buscar matches
         </button>
     );
-}
+})
 
 export { ButtonFindCouples };

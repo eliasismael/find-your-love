@@ -1,9 +1,8 @@
 .Footer {
     background-color: #e4e4e4;
     padding: 1em 10em;
-    font-family: Arial, sans-serif;
     text-align: center;
-    color: #3b3b3b;
+    color: #000000;
     font-size: 16px;
   }
   
@@ -19,19 +18,21 @@
     margin-right: 40px;
   }
   
-  .Footer__section h3 {
-    font-size: 20px;
+  .Footer__section__tittle {
+    font-size: 1.5em;
     margin-bottom: 10px;
-    text-align: start;
+    text-align: center;
   }
 
-   
-  .Footer__section p {
-    font-size: 1em;
+  .Footer__section__text {
+    font-size: 1.5em;
   }
   
-  .auspiciants {
+  .Footer__section__text p {
     font-style: italic;
+    font-family: "Times New Roman", Times, serif;
+    font-size: .8em;
+
   }
   
   .Footer__bottom {
@@ -42,8 +43,8 @@
     align-items: center;
   }
   
-  .Footer__bottom p {
+  .Footer__bottom__text {
     margin-bottom: 5px;
-    font-size: 1em;
+    font-size: 1.6em;
   }
   

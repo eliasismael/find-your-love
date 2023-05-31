@@ -1,11 +1,11 @@
 import React, { useState, useRef, useEffect, forwardRef } from "react";
-import { Link } from "react-router-dom";
 import { CSSTransition } from "react-transition-group";
 
 import "./index.css";
 import "./transitions.css";
 
 const Menu = forwardRef(function Menu({ makeScroll }, ref) {
+
     const [modalVisible, setModalVisible] = useState(false);
     const menuModalRef = useRef(null);
 
@@ -35,12 +35,10 @@ const Menu = forwardRef(function Menu({ makeScroll }, ref) {
                 <div className="Menu__modal" ref={menuModalRef}>
                     <ul>
                         <li onClick={() => makeScroll(ref.aboutUsRef)}>
-                            {/* <Link to="/about">Sobre nosotros</Link> */}
                             Sobre nosotros
                         </li>
 
                         <li onClick={() => makeScroll(ref.contactRef)}>
-                            {/* <Link to="/contact">Contacto</Link> */}
                             Contacto
                         </li>
                     </ul>
